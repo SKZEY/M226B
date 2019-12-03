@@ -1,7 +1,3 @@
 # M226B – Projekt FlixbusTerminalSimulation
 
-- TUI;
-- Ein Busbahnhof mit 10 Gates:
-  - 4 nationale;
-  - 4 grosse internationale;
-  - 2 kleine internationale;
+Erarbeitet werden soll eine TUI-Applikation, die einen Flixbushof mit 10 Abfahrtsstationen ("Gates") simuliert. Damit sollen An- und Abfahrtszeiten sowie Informationen über die Gates angezeigt werden können; ebenso sollen Busse die Erlaubnis zum Ankommen und Abfahren erhalten.  
