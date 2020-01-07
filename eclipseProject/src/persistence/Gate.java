@@ -3,6 +3,7 @@ package persistence;
 public class Gate {
 	private int typ;
 	private int groesse;
+	private int nummer;
 	private Fahrt fahrt;
 
 	public void ankommen(Fahrt fahrt) {
@@ -21,15 +22,8 @@ public class Gate {
 		return groesse;
 	}
 
-	public String getTyp() {
-		switch (typ) {
-			case 1:
-				return "";
-			case 2:
-				return "";
-			default:
-				return "false";
-		}
+	public int getTyp() {
+		return typ;
 	}
 
 	public Fahrt getFahrt() {
