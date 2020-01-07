@@ -16,7 +16,8 @@ public class Bushof {
   }
 
   public int gateStatus(int gateNummer) {
-    
+    int i = 0;
+    return i;
   }
 
 }
