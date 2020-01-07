@@ -21,12 +21,8 @@ public class Bushof {
   }
 
   public int gateStatus(int gateNummer) {
-<<<<<<< HEAD
-    return 0;
-=======
     int i = 0;
     return i;
->>>>>>> 887a26df493002529b7985b4d323910182f78d7e
   }
 
 }
