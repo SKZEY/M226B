@@ -21,7 +21,7 @@ public abstract class MainReader {
 	
 	public abstract ArrayList<Object> getListOfObject();
 	
-	public void setFilePath (String path) {
+	public void setFilePath (String pathBuilder, String path) {
 		this.filePath = path;
 	}
 	

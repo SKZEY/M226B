@@ -10,8 +10,8 @@ public ReadBus(String filePath, String delimiter) {
 	}
 
 @Override
-public void setFilePath (String path) {
-	this.filePath = System.getProperty("user.dir")+"\\data"+ path;
+public void setFilePath (String pathBuilder, String path) {
+	this.filePath = System.getProperty("user.dir")+ pathBuilder + "data"+ path;
 }
 public ArrayList<Object> getListOfObject() {
 	  	String[] tempArr;	 

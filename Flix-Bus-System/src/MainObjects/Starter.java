@@ -1,5 +1,7 @@
 package MainObjects;
 import UserInterface.*;
+
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,27 +21,27 @@ public class Starter {
 	public static void main(String[] args) {
 
 		//Data Path
-		String filePath = System.getProperty("user.dir")+"\\data";
+		String filePath = System.getProperty("user.dir") + pathBuilder() + "data";
 		//Bus
 		ArrayList<Object> listOfBus = new ArrayList();
 		ReadBus readBus =  new ReadBus(null,";");
-		readBus.setFilePath("\\bus.csv");
+		readBus.setFilePath(pathBuilder(), pathBuilder() + "bus.csv");
 		listOfBus = readBus.getListOfObject();
 
 		//Travle
 		ArrayList<Object> listOfTravel = new ArrayList();
-		ReadTravel  readTravel=  new ReadTravel(filePath+"\\travel.csv",";", listOfBus);
+		ReadTravel  readTravel=  new ReadTravel(filePath + pathBuilder() + "travel.csv",";", listOfBus);
 		listOfTravel = readTravel.getListOfObject();
 
 		//Platform
 		ArrayList<Object> listOfPlatform = new ArrayList();
-		ReadPlatform  readPlatform=  new ReadPlatform(filePath+"\\platform.csv",";", listOfTravel);
+		ReadPlatform  readPlatform=  new ReadPlatform(filePath + pathBuilder() + "platform.csv",";", listOfTravel);
 		listOfPlatform = readPlatform.getListOfObject();
 
 
 		//BusTerminal
 		ArrayList<Object> listOfBusTerminal = new ArrayList();
-		ReadBusTerminal  readBusTerminal=  new ReadBusTerminal(filePath+"\\busTerminal.csv",";", listOfPlatform);
+		ReadBusTerminal  readBusTerminal=  new ReadBusTerminal(filePath + pathBuilder() + "busTerminal.csv",";", listOfPlatform);
 		listOfBusTerminal = readBusTerminal.getListOfObject();
 
 
@@ -102,4 +104,16 @@ public class Starter {
 
 	}
 
+	static String pathBuilder() {
+		String os = System.getProperty("os.name"); // check os type
+		if (os.startsWith("Windows")) {
+			return "\\";
+		} else { // in case of unix-os
+			return "/";
+		}
+		
+	}
 }
+
+
+
