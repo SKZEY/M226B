@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Flix-Bus-System/Flix-Bus-System.iml" filepath="$PROJECT_DIR$/Flix-Bus-System/Flix-Bus-System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/M226B.iml" filepath="$PROJECT_DIR$/M226B.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eclipseProject/eclipseProject.iml" filepath="$PROJECT_DIR$/eclipseProject/eclipseProject.iml" />
+    </modules>
+  </component>
+</project>

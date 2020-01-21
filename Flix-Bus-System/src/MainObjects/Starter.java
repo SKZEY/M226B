@@ -1,16 +1,11 @@
 package MainObjects;
+
 import UserInterface.*;
 
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Scanner;
-
-import org.w3c.dom.ls.LSInput;
-
-import Reader.MainReader;
 import Reader.ReadBus;
 import Reader.ReadBusTerminal;
 import Reader.ReadPlatform;
@@ -20,62 +15,38 @@ public class Starter {
 
 	public static void main(String[] args) {
 
-		//Data Path
-		String filePath = System.getProperty("user.dir") + pathBuilder() + "data";
-		//Bus
+		// Data Path
+		String filePath = System.getProperty("user.dir") + pathBuilder()
+				+ "data";
+		// Bus
 		ArrayList<Object> listOfBus = new ArrayList();
-		ReadBus readBus =  new ReadBus(null,";");
+		ReadBus readBus = new ReadBus(null, ";");
 		readBus.setFilePath(pathBuilder(), pathBuilder() + "bus.csv");
 		listOfBus = readBus.getListOfObject();
 
-		//Travle
+		// Travel
 		ArrayList<Object> listOfTravel = new ArrayList();
-		ReadTravel  readTravel=  new ReadTravel(filePath + pathBuilder() + "travel.csv",";", listOfBus);
+		ReadTravel readTravel = new ReadTravel(
+				filePath + pathBuilder() + "travel.csv", ";", listOfBus);
 		listOfTravel = readTravel.getListOfObject();
 
-		//Platform
+		// Platform
 		ArrayList<Object> listOfPlatform = new ArrayList();
-		ReadPlatform  readPlatform=  new ReadPlatform(filePath + pathBuilder() + "platform.csv",";", listOfTravel);
+		ReadPlatform readPlatform = new ReadPlatform(
+				filePath + pathBuilder() + "platform.csv", ";", listOfTravel);
 		listOfPlatform = readPlatform.getListOfObject();
 
-
-		//BusTerminal
+		// BusTerminal
 		ArrayList<Object> listOfBusTerminal = new ArrayList();
-		ReadBusTerminal  readBusTerminal=  new ReadBusTerminal(filePath + pathBuilder() + "busTerminal.csv",";", listOfPlatform);
+		ReadBusTerminal readBusTerminal = new ReadBusTerminal(
+				filePath + pathBuilder() + "busTerminal.csv", ";",
+				listOfPlatform);
 		listOfBusTerminal = readBusTerminal.getListOfObject();
-
 
 		TUI tui = new TUI(listOfPlatform, listOfTravel, listOfBus);
 		tui.mainMenu();
 
-
-
-
-
-		/*Bus bus1 = (Bus) listOfBus.get(2);
-
-		System.out.println(bus1.getBusNo() + " " + bus1.getType() + " " + bus1.getComfort() + " " + bus1.getPassengerCapacity() + " " + bus1.getPetrolTankCapacity());
-
-		Travel travel = (Travel) listOfTravel.get(1);
-
-		System.out.println(travel.getDestination() + " " + travel.getArrivalTime()+ " "+ travel.getDepartureTime() + " " + travel.getBus().getBusNo());
-
-		Platform platform = (Platform) listOfPlatform.get(0);
-		System.out.println("Platform: "+ platform.getPlatformNo());
-		ArrayList<Travel> travelList = platform.getTravelList();
-		for (Travel item : travelList) {
-			System.out.println(item.getTravelNo());
-		}
-
-		//System.out.println(platform.getPlatformNo() + " " + platform.getPlatformSize() + " " + platform.isPlatformOccupied() + " " + platform.getTravel().getTravelNo());
-		test();
-
-		BusTerminal busTerminal = (BusTerminal) listOfBusTerminal.get(0);
-		//System.out.println(busTerminal.getNameOfTerminal() + " " + busTerminal.getPlatformList().get(0).getTravel().getBus().getBusNo());
-
-		*/
 	}
-
 
 	public void name(int test) {
 
@@ -84,9 +55,6 @@ public class Starter {
 	public void name(String test) {
 
 	}
-
-
-
 
 	public static void test() {
 
@@ -111,9 +79,6 @@ public class Starter {
 		} else { // in case of unix-os
 			return "/";
 		}
-		
+
 	}
 }
-
-
-
