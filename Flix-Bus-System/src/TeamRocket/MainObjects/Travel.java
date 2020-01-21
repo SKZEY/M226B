@@ -1,4 +1,4 @@
-package MainObjects;
+package TeamRocket.MainObjects;
 import java.util.Comparator;
 import java.util.Date;
 

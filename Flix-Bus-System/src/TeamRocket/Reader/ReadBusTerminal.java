@@ -1,10 +1,9 @@
-package Reader;
+package TeamRocket.Reader;
 
 import java.util.ArrayList;
 
-import MainObjects.Bus;
-import MainObjects.BusTerminal;
-import MainObjects.Platform;
+import TeamRocket.MainObjects.BusTerminal;
+import TeamRocket.MainObjects.Platform;
 
 public class ReadBusTerminal extends MainReader {
 	ArrayList<Object> objectList;

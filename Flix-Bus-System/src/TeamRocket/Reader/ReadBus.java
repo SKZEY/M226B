@@ -1,7 +1,7 @@
-package Reader;
+package TeamRocket.Reader;
 
 import java.util.*;
-import MainObjects.*;
+import TeamRocket.MainObjects.*;
 
 public class ReadBus extends MainReader {
 	

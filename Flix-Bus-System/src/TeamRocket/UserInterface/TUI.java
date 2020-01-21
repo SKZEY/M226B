@@ -1,13 +1,14 @@
-package UserInterface;
+package TeamRocket.UserInterface;
 import java.text.*;
 import java.util.*;
 
-import javax.swing.text.AbstractDocument.BranchElement;
-
-import MainObjects.*;
+import TeamRocket.MainObjects.*;
 
 public class TUI implements output {
+
 	ArrayList<Object> listOfPlatform;
+
+
 	ArrayList<Object> listOfBus;
 	ArrayList<Object> listOfTravel;
 	

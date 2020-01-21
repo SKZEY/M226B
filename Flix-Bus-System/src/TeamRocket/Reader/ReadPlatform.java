@@ -1,8 +1,8 @@
-package Reader;
+package TeamRocket.Reader;
 
 import java.util.ArrayList;
 
-import MainObjects.*;
+import TeamRocket.MainObjects.*;
 
 public class ReadPlatform extends MainReader {
 	ArrayList<Object> travelList;

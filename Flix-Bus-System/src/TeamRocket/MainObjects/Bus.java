@@ -1,4 +1,4 @@
-package MainObjects;
+package TeamRocket.MainObjects;
 
 public class Bus extends Vehicle {
 
