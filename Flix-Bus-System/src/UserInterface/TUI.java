@@ -117,7 +117,11 @@ public class TUI implements output {
 				BusLeaves();
 				break;
 			case "V":
-				isPlatformOccupied();
+				try {
+					isPlatformOccupied();
+				} catch (PlatformNotFoundException e) {
+					System.out.println("Platform wurde nicht gefunden");
+				}
 				break;
 			}
 
@@ -126,8 +130,9 @@ public class TUI implements output {
 
 	/**
 	 * Checks if is platform occupied.
+	 * @throws PlatformNotFoundException 
 	 */
-	public void isPlatformOccupied() {
+	public void isPlatformOccupied() throws PlatformNotFoundException {
 		String platformNo;
 		boolean find = false;
 		System.out.println("Bitte geben sie die Platformnummer ein: ");
@@ -149,7 +154,8 @@ public class TUI implements output {
 				System.out.println("Platform ist besetzt");
 			}
 		} else {
-			System.out.println("Platform wurde nicht gefunden");
+			throw new PlatformNotFoundException("Plattform wurde nicht gefunden.");
+//			System.out.println("Platform wurde nicht gefunden");
 		}
 	}
 
