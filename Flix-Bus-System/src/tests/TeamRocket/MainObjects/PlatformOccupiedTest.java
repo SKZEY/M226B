@@ -1,4 +1,4 @@
-package TeamRocket.MainObjects;
+package tests.TeamRocket.MainObjects;
 
 import TeamRocket.Reader.ReadBus;
 import TeamRocket.Reader.ReadTravel;

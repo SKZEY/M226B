@@ -1,19 +1,4 @@
-<<<<<<< HEAD:Flix-Bus-System/src/TeamRocket/UserInterface/output.java
 package TeamRocket.UserInterface;
-
-public interface output {
-	
-	public void printListOfTravel();
-	
-	public void printListOfPlatforms();
-	
-	public void PrintTravelByDestionation();
-	
-	public void mainMenu();
-
-}
-=======
-package UserInterface;
 
 /*
  *  @author melvin 
@@ -44,4 +29,3 @@ public interface output {
 	public void mainMenu();
 
 }
->>>>>>> origin/master:Flix-Bus-System/src/UserInterface/output.java

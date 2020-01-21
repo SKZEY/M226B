@@ -1,4 +1,4 @@
-package UserInterface;
+package TeamRocket.UserInterface;
 
 public class PlatformNotFoundException extends Exception {
 	
