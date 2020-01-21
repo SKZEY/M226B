@@ -10,49 +10,46 @@ import java.util.ArrayList;
  */
 public class Platform {
 
-	
 	/** The platform no. */
 	private int platformNo;
-	
+
 	/** The platform size. */
 	private int platformSize;
-	
+
 	/** The travel list. */
 	private ArrayList<Travel> travelList;
-	
+
 	/** The occupied. */
 	private int occupied;
-	
+
 	/**
 	 * Instantiates a new platform.
 	 *
-	 * @param platformNo the platform no
+	 * @param platformNo   the platform no
 	 * @param platformSize the platform size
-	 * @param travelList the travel list
+	 * @param travelList   the travel list
 	 */
-	public Platform(int platformNo, int platformSize, ArrayList<Travel> travelList) {
+	public Platform(int platformNo, int platformSize,
+			ArrayList<Travel> travelList) {
 		this.platformNo = platformNo;
 		this.platformSize = platformSize;
 		this.travelList = travelList;
 	}
-	
-	
 
-	
 	/**
 	 * Bus arrive in platform.
 	 */
 	public void busArriveInPlatform() {
 		this.occupied = 1;
 	}
-	
+
 	/**
 	 * Bus leave from platform.
 	 */
 	public void busLeaveFromPlatform() {
 		this.occupied = 0;
 	}
-	
+
 	/**
 	 * Checks if is platform occupied.
 	 *
@@ -61,7 +58,7 @@ public class Platform {
 	public int isPlatformOccupied() {
 		return occupied;
 	}
-	
+
 	/**
 	 * Gets the platform no.
 	 *
@@ -70,7 +67,7 @@ public class Platform {
 	public int getPlatformNo() {
 		return platformNo;
 	}
-	
+
 	/**
 	 * Gets the platform size.
 	 *
@@ -79,7 +76,7 @@ public class Platform {
 	public int getPlatformSize() {
 		return platformSize;
 	}
-	
+
 	/**
 	 * Gets the travel list.
 	 *
@@ -88,5 +85,5 @@ public class Platform {
 	public ArrayList<Travel> getTravelList() {
 		return travelList;
 	}
-	
+
 }

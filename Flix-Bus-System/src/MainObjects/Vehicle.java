@@ -7,30 +7,29 @@ package MainObjects;
  * The Class Vehicle.
  */
 public class Vehicle {
-	
-	
+
 	/** The passenger capacity. */
 	private int passengerCapacity;
-	//0 Basic
+	// 0 Basic
 	/** The comfort. */
 	private int comfort;
-	
+
 	/** The petrol tank capacity. */
 	private int petrolTankCapacity;
-		
+
 	/**
 	 * Instantiates a new vehicle.
 	 *
-	 * @param passengerCapacity the passenger capacity
-	 * @param comfort the comfort
+	 * @param passengerCapacity  the passenger capacity
+	 * @param comfort            the comfort
 	 * @param petrolTankCapacity the petrol tank capacity
 	 */
-	public Vehicle (int passengerCapacity, int comfort, int petrolTankCapacity) {
+	public Vehicle(int passengerCapacity, int comfort, int petrolTankCapacity) {
 		this.passengerCapacity = passengerCapacity;
 		this.comfort = comfort;
 		this.petrolTankCapacity = petrolTankCapacity;
 	}
-	
+
 	/**
 	 * Gets the passenger capacity.
 	 *
@@ -39,7 +38,7 @@ public class Vehicle {
 	public int getPassengerCapacity() {
 		return passengerCapacity;
 	}
-	
+
 	/**
 	 * Gets the comfort.
 	 *
@@ -48,7 +47,7 @@ public class Vehicle {
 	public int getComfort() {
 		return comfort;
 	}
-	
+
 	/**
 	 * Gets the petrol tank capacity.
 	 *

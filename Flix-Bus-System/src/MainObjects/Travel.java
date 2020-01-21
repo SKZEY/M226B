@@ -1,4 +1,5 @@
 package MainObjects;
+
 import java.util.Comparator;
 import java.util.Date;
 
@@ -9,51 +10,51 @@ import java.util.Date;
  * The Class Travel.
  */
 public class Travel {
-	
+
 	/** The destination. */
 	private String destination;
-	
+
 	/** The arrival time. */
-	private Date  arrivalTime;
-	
+	private Date arrivalTime;
+
 	/** The departure time. */
 	private Date departureTime;
-	
+
 	/** The bus. */
 	private Bus bus;
-	
+
 	/** The travel no. */
-	private int  travelNo; 
-	
-	
+	private int travelNo;
+
 	/**
 	 * Instantiates a new travel.
 	 *
-	 * @param travelNo the travel no
-	 * @param destination the destination
-	 * @param arrivalTime the arrival time
+	 * @param travelNo      the travel no
+	 * @param destination   the destination
+	 * @param arrivalTime   the arrival time
 	 * @param departureTime the departure time
-	 * @param bus the bus
+	 * @param bus           the bus
 	 */
-	public Travel (int travelNo, String destination, Date arrivalTime, Date departureTime, Bus bus) {
+	public Travel(int travelNo, String destination, Date arrivalTime,
+			Date departureTime, Bus bus) {
 		this.destination = destination;
 		this.arrivalTime = arrivalTime;
 		this.departureTime = departureTime;
 		this.bus = bus;
 		this.travelNo = travelNo;
-		
+
 	}
-	
+
 	/** The travel abfahrt comparator. */
 	public static Comparator<Travel> travelAbfahrtComparator = new Comparator<Travel>() {
-		
+
 		public int compare(Travel t1, Travel t2) {
 			String travelAbfahrt1 = t1.getDepartureTime().toString();
 			String travelAbfahrt2 = t2.getDepartureTime().toString();
 			return travelAbfahrt1.compareTo(travelAbfahrt2);
 		}
 	};
-	
+
 	/**
 	 * Checks if is national travle.
 	 *
@@ -62,7 +63,7 @@ public class Travel {
 	public boolean isNationalTravle() {
 		return bus.getBusType();
 	}
-	
+
 	/**
 	 * Gets the bus.
 	 *
@@ -71,7 +72,7 @@ public class Travel {
 	public Bus getBus() {
 		return bus;
 	}
-	
+
 	/**
 	 * Gets the arrival time.
 	 *
@@ -79,9 +80,9 @@ public class Travel {
 	 */
 	public Date getArrivalTime() {
 		return arrivalTime;
-		
+
 	}
-	
+
 	/**
 	 * Gets the departure time.
 	 *
@@ -89,9 +90,9 @@ public class Travel {
 	 */
 	public Date getDepartureTime() {
 		return departureTime;
-		
+
 	}
-	
+
 	/**
 	 * Gets the destination.
 	 *
@@ -99,9 +100,9 @@ public class Travel {
 	 */
 	public String getDestination() {
 		return destination;
-		
+
 	}
-	
+
 	/**
 	 * Gets the travel no.
 	 *
