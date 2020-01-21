@@ -9,16 +9,36 @@ import java.util.Timer;
 import MainObjects.*;
 import MainObjects.Travel;
 
+/*
+ *  @author melvin 
+ * */
+/**
+ * The Class ReadTravel.
+ */
 public class ReadTravel  extends MainReader {
 	
+	/** The bus liste. */
 	ArrayList<Object> busListe; 
 	
+/**
+ * Instantiates a new read travel.
+ *
+ * @param filePath the file path
+ * @param delimiter the delimiter
+ * @param objectList the object list
+ */
 public ReadTravel(String filePath, String delimiter, ArrayList<Object> objectList) {
 		super(filePath, delimiter);
 		busListe =objectList;
 	}
 
 
+/**
+ * Find bus by no.
+ *
+ * @param busNo the bus no
+ * @return the bus
+ */
 public Bus findBusByNo(int busNo ) {
 	Bus bus = null;
 	for (Object object : busListe) {
@@ -32,6 +52,9 @@ public Bus findBusByNo(int busNo ) {
 	
 }
 
+/* (non-Javadoc)
+ * @see Reader.MainReader#getListOfObject()
+ */
 public ArrayList<Object> getListOfObject() {
 	  	String[] tempArr;	 
 		ArrayList<Object> listOfTravel = new ArrayList();
@@ -47,6 +70,12 @@ public ArrayList<Object> getListOfObject() {
 
 
 
+/**
+ * Gets the time by string.
+ *
+ * @param strTime the str time
+ * @return the time by string
+ */
 public  Date getTimeByString(String strTime) {
     SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
     Date date = null;

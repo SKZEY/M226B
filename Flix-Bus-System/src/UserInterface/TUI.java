@@ -6,15 +6,39 @@ import javax.swing.text.AbstractDocument.BranchElement;
 
 import MainObjects.*;
 
+/*
+ *  @author melvin 
+ * */
+/**
+ * The Class TUI.
+ */
 public class TUI implements output {
+	
+	/** The list of platform. */
 	ArrayList<Object> listOfPlatform;
+	
+	/** The list of bus. */
 	ArrayList<Object> listOfBus;
+	
+	/** The list of travel. */
 	ArrayList<Object> listOfTravel;
 	
+	/** The platform. */
 	Platform platform;
+	
+	/** The eingabe. */
 	String eingabe = null; 
+	
+	/** The sc. */
 	Scanner sc = new Scanner(System.in);
 	
+	/**
+	 * Instantiates a new tui.
+	 *
+	 * @param listOfPlatform the list of platform
+	 * @param listOfTravel the list of travel
+	 * @param listOfBus the list of bus
+	 */
 	public TUI (ArrayList<Object> listOfPlatform, ArrayList<Object> listOfTravel,ArrayList<Object> listOfBus) {
 		this.listOfPlatform = listOfPlatform;
 		this.listOfTravel = listOfTravel;
@@ -22,20 +46,32 @@ public class TUI implements output {
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see UserInterface.output#printListOfTravel()
+	 */
 	public void printListOfTravel() {
 			
 	}
 
+	/* (non-Javadoc)
+	 * @see UserInterface.output#printListOfPlatforms()
+	 */
 	public void printListOfPlatforms() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see UserInterface.output#PrintTravelByDestionation()
+	 */
 	public void PrintTravelByDestionation() {
 		// TODO Auto-generated method stub
 		
 	}
 
+	/* (non-Javadoc)
+	 * @see UserInterface.output#mainMenu()
+	 */
 	public void mainMenu() {
 		do {
 			System.out.println("---Flix-Bus-System---");
@@ -74,6 +110,9 @@ public class TUI implements output {
 		} while (!eingabe.equalsIgnoreCase("b"));
 	}
 	
+	/**
+	 * Checks if is platform occupied.
+	 */
 	public void isPlatformOccupied() {
 		String platformNo;
 		boolean find = false;
@@ -101,6 +140,9 @@ public class TUI implements output {
 		}
 	}
 	
+	/**
+	 * Bus leaves.
+	 */
 	public void	BusLeaves() {
 		System.out.println("Welcher Bus fährt raus");
 		String busNo;
@@ -134,6 +176,9 @@ public class TUI implements output {
 	}
 	
 	
+	/**
+	 * Bus arrives.
+	 */
 	public void BusArrives() {
 		System.out.println("Welcher Bus fährt ein: ");
 		String busNo;
@@ -166,6 +211,9 @@ public class TUI implements output {
 		}
 	}
 	
+	/**
+	 * Travel menu.
+	 */
 	public void travelMenu() {
 		do {
 			System.out.println("--- Abfahrtszeiten --- ");
@@ -192,6 +240,12 @@ public class TUI implements output {
 		} while (!eingabe.equalsIgnoreCase("z"));
 	}
 	
+	/**
+	 * Checks if is string integer.
+	 *
+	 * @param number the number
+	 * @return true, if is string integer
+	 */
 	public  boolean isStringInteger(String number ){
 	    try{
 	        Integer.parseInt(number);
@@ -201,6 +255,12 @@ public class TUI implements output {
 	    return true;
 	}
 	
+	/**
+	 * Gets the platform by number.
+	 *
+	 * @param platformNo the platform no
+	 * @return the platform by number
+	 */
 	public Platform getPlatformByNumber(int platformNo){
 		Platform platform = null;
 		for (Object object : listOfPlatform) {
@@ -214,6 +274,9 @@ public class TUI implements output {
 		
 	}
 	
+	/**
+	 * Prints the schedule of travels.
+	 */
 	public void printScheduleOfTravels() {
 		System.out.println("Platform\tBus\t\tAbfahrt\t\tAnkunft\t\tZiel\t\tKlasse");
 		String line = null;
@@ -240,6 +303,11 @@ public class TUI implements output {
 		
 	}
 	
+	/**
+	 * Prints the list of travelby platform.
+	 *
+	 * @param platfrom the platfrom
+	 */
 	public void printListOfTravelbyPlatform(Platform platfrom) {
 		
 		ArrayList<Travel> travelList = platfrom.getTravelList();
@@ -252,6 +320,12 @@ public class TUI implements output {
 		System.out.println();
 	}
 	
+	/**
+	 * Gets the time by string.
+	 *
+	 * @param strTime the str time
+	 * @return the time by string
+	 */
 	public  Date getTimeByString(String strTime) {
 	    SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
 	    Date date = null;
@@ -263,6 +337,12 @@ public class TUI implements output {
 	    return date;
 	}
 	
+	/**
+	 * Gets the time by string.
+	 *
+	 * @param date the date
+	 * @return the time by string
+	 */
 	public  String  getTimeByString(Date date) {
 	    String strDate = null;
 	    SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");  
@@ -272,6 +352,9 @@ public class TUI implements output {
 	
 	
 	
+	/**
+	 * Creates the new travel.
+	 */
 	public void createNewTravel() {
 		System.out.println("Neue Reise anlegen");
 		Bus bus = generateNewBus();
@@ -300,6 +383,14 @@ public class TUI implements output {
 		
 	}
 	
+	/**
+	 * Checks if is platform in use.
+	 *
+	 * @param platform the platform
+	 * @param arrivalTimeDate the arrival time date
+	 * @param departureTimeDate the departure time date
+	 * @return true, if is platform in use
+	 */
 	public boolean isPlatformInUse(Platform platform,  Date arrivalTimeDate, Date departureTimeDate) {
 		boolean returnValue = false;
 		ArrayList<Travel> travelList = platform.getTravelList();
@@ -318,6 +409,14 @@ public class TUI implements output {
 		return returnValue;
 	}
 	
+	/**
+	 * Between.
+	 *
+	 * @param i the i
+	 * @param minValueInclusive the min value inclusive
+	 * @param maxValueInclusive the max value inclusive
+	 * @return true, if successful
+	 */
 	public static boolean between(Long i, Long minValueInclusive, Long maxValueInclusive) {
 	    if (i >= minValueInclusive && i <= maxValueInclusive)
 	        return true;
@@ -325,6 +424,12 @@ public class TUI implements output {
 	        return false;
 	}
 	
+	/**
+	 * Generatenew travel.
+	 *
+	 * @param bus the bus
+	 * @return the travel
+	 */
 	public Travel generatenewTravel(Bus bus) {
 		
 		Scanner sc = new Scanner(System.in); 
@@ -348,6 +453,11 @@ public class TUI implements output {
 		return travel;
 	}
 	
+	/**
+	 * Generate new bus.
+	 *
+	 * @return the bus
+	 */
 	public Bus generateNewBus() {
 		
 		Scanner sc = new Scanner(System.in); 
@@ -375,6 +485,11 @@ public class TUI implements output {
 		return bus;
 	}
 	
+	/**
+	 * Gets the next bus no.
+	 *
+	 * @return the next bus no
+	 */
 	public int getNextBusNo() {
 		Bus tempBus;
 		int max = Integer.MIN_VALUE;
@@ -387,6 +502,11 @@ public class TUI implements output {
 		return max+1; 
 	}
 	
+	/**
+	 * Gets the next travel no.
+	 *
+	 * @return the next travel no
+	 */
 	public int getNextTravelNo() {
 		Travel tempTravel;
 		int max = Integer.MIN_VALUE;

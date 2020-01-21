@@ -4,14 +4,35 @@ import java.util.ArrayList;
 
 import MainObjects.*;
 
+/*
+ *  @author melvin 
+ * */
+/**
+ * The Class ReadPlatform.
+ */
 public class ReadPlatform extends MainReader {
+	
+	/** The travel list. */
 	ArrayList<Object> travelList;
 
+	/**
+	 * Instantiates a new read platform.
+	 *
+	 * @param filePath the file path
+	 * @param delimiter the delimiter
+	 * @param objectList the object list
+	 */
 	public ReadPlatform(String filePath, String delimiter, ArrayList<Object> objectList) {
 		super(filePath, delimiter);
 		travelList = objectList;
 	}
 	
+	/**
+	 * Find travel by no.
+	 *
+	 * @param travelNo the travel no
+	 * @return the travel
+	 */
 	public Travel findTravelByNo(int travelNo ) {
 		Travel travel = null;
 		for (Object travelItem : travelList) {
@@ -23,6 +44,9 @@ public class ReadPlatform extends MainReader {
 		return travel;
 	}	
 
+/* (non-Javadoc)
+ * @see Reader.MainReader#getListOfObject()
+ */
 public ArrayList<Object> getListOfObject() {
 	  	String[] tempArr;	 
 		ArrayList<String> listofLines = new ArrayList();
@@ -38,6 +62,13 @@ public ArrayList<Object> getListOfObject() {
 		return listOfUniquePlatform;
 	}
 
+/**
+ * Gets the listof travel.
+ *
+ * @param platformNo the platform no
+ * @param listofLines the listof lines
+ * @return the listof travel
+ */
 public ArrayList<Travel> getListofTravel(String platformNo, ArrayList<String> listofLines ){
 	String[] tempArr;
 	ArrayList<Travel> temptravelList = new ArrayList<Travel>();
@@ -56,6 +87,13 @@ public ArrayList<Travel> getListofTravel(String platformNo, ArrayList<String> li
 return temptravelList;
 }
 
+/**
+ * Id allready exist.
+ *
+ * @param no the no
+ * @param listOfObject the list of object
+ * @return true, if successful
+ */
 public boolean idAllreadyExist(int no, ArrayList<Object> listOfObject) {
 	boolean ReturnValue = false;
 	for (Object object : listOfObject) {

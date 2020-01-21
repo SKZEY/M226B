@@ -6,15 +6,35 @@ import MainObjects.Bus;
 import MainObjects.BusTerminal;
 import MainObjects.Platform;
 
+/*
+ *  @author melvin 
+ * */
+/**
+ * The Class ReadBusTerminal.
+ */
 public class ReadBusTerminal extends MainReader {
+	
+	/** The object list. */
 	ArrayList<Object> objectList;
 
 
+/**
+ * Instantiates a new read bus terminal.
+ *
+ * @param filePath the file path
+ * @param delimiter the delimiter
+ * @param objectList the object list
+ */
 public ReadBusTerminal(String filePath, String delimiter, ArrayList<Object> objectList) {
 		super(filePath, delimiter);
 		this.objectList = objectList;
 	}
 
+/**
+ * Change list type.
+ *
+ * @return the array list
+ */
 private ArrayList<Platform> changeListType () {
 	ArrayList<Platform> platformList = new ArrayList<Platform>();
 	for (Object object : objectList) {
@@ -25,6 +45,9 @@ private ArrayList<Platform> changeListType () {
 	
 }
 
+/* (non-Javadoc)
+ * @see Reader.MainReader#getListOfObject()
+ */
 public ArrayList<Object> getListOfObject() {
 	  	String[] tempArr;	 
 		ArrayList<Object> listOfBusTerminal = new ArrayList();

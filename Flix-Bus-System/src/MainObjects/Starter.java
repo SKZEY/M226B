@@ -11,8 +11,17 @@ import Reader.ReadBusTerminal;
 import Reader.ReadPlatform;
 import Reader.ReadTravel;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Starter.
+ */
 public class Starter {
 
+	/**
+	 * The main method.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) {
 
 		// Data Path
@@ -48,14 +57,27 @@ public class Starter {
 
 	}
 
+	/**
+	 * Name.
+	 *
+	 * @param test the test
+	 */
 	public void name(int test) {
 
 	}
 
+	/**
+	 * Name.
+	 *
+	 * @param test the test
+	 */
 	public void name(String test) {
 
 	}
 
+	/**
+	 * Test.
+	 */
 	public static void test() {
 
 		String myTime = "10:30:54";
@@ -72,6 +94,11 @@ public class Starter {
 
 	}
 
+	/**
+	 * Path builder.
+	 *
+	 * @return the string
+	 */
 	static String pathBuilder() {
 		String os = System.getProperty("os.name"); // check os type
 		if (os.startsWith("Windows")) {

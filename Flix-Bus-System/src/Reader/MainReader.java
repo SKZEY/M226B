@@ -9,29 +9,71 @@ import java.util.List;
 
 import MainObjects.Bus;
 
+/*
+ *  @author melvin 
+ * */
+/**
+ * The Class MainReader.
+ */
 public abstract class MainReader {
 	
+	/** The file path. */
 	protected  String filePath;
+	
+	/** The delimiter. */
 	private   String delimiter;
 	
+	/**
+	 * Instantiates a new main reader.
+	 *
+	 * @param filePath the file path
+	 * @param delimiter the delimiter
+	 */
 	public MainReader (String filePath,String delimiter) {
 		this.filePath = filePath;
 		this.delimiter = delimiter;
 	}
 	
+	/**
+	 * Gets the list of object.
+	 *
+	 * @return the list of object
+	 */
 	public abstract ArrayList<Object> getListOfObject();
 	
+	/**
+	 * Sets the file path.
+	 *
+	 * @param pathBuilder the path builder
+	 * @param path the path
+	 */
 	public void setFilePath (String pathBuilder, String path) {
 		this.filePath = path;
 	}
 	
+	/**
+	 * Gets the file path.
+	 *
+	 * @return the file path
+	 */
 	public String getfilePath () {
 		return filePath;
 	}
 	
+	/**
+	 * Gets the delimiter.
+	 *
+	 * @return the delimiter
+	 */
 	public String getdelimiter () {
 		return delimiter;
 	}
+	
+	/**
+	 * Gets the file lines.
+	 *
+	 * @return the file lines
+	 */
 	public  ArrayList getFileLines() {
 		ArrayList<String> csvList = new ArrayList();
 		try {
@@ -51,6 +93,11 @@ public abstract class MainReader {
 		
 	}
 	
+	/**
+	 * Gets the rec count.
+	 *
+	 * @return the rec count
+	 */
 	public int getRecCount() {
 		 int i = 0;
 		try {
@@ -67,6 +114,11 @@ public abstract class MainReader {
 		return i-1;	
 	}
 	
+	/**
+	 * Gets the field count.
+	 *
+	 * @return the field count
+	 */
 	public int getFieldCount() {
 		 int count = 0;
 		 String line;
