@@ -1,4 +1,4 @@
-package tests.TeamRocket.MainObjects;
+package TeamRocket.MainObjects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
