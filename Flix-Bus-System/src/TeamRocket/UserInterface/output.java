@@ -2,6 +2,7 @@ package TeamRocket.UserInterface;
 
 /**
  * The Interface output.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public interface output {

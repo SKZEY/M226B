@@ -13,6 +13,7 @@ import TeamRocket.MainObjects.Travel;
 
 /**
  * The Class TUI.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class TUI implements output {
@@ -28,7 +29,7 @@ public class TUI implements output {
 
 	/** The list of bus terminals. */
 	ArrayList<Object> listOfBusTerminal;
-	
+
 	/** The platform. */
 	Platform platform;
 
@@ -91,13 +92,20 @@ public class TUI implements output {
 	public void mainMenu() {
 		do {
 			System.out.println("");
-			System.out.println(" _____  _      ____  __ __         ____   __ __  _____      _____ __ __  _____ ______    ___  ___ ___");
-			System.out.println("|     || |    |    ||  |  |       |    \\ |  |  |/ ___/     / ___/|  |  |/ ___/|      |  /  _]|   |   |");
-			System.out.println("|   __|| |     |  | |  |  | _____ |  o  )|  |  (   \\_     (   \\_ |  |  (   \\_ |      | /  [_ | _   _ |");
-			System.out.println("|  |_  | |___  |  | |_   _||     ||     ||  |  |\\__  |     \\__  ||  ~  |\\__  ||_|  |_||    _]|  \\_/  |");
-			System.out.println("|   _] |     | |  | |     ||_____||  O  ||  :  |/  \\ |     /  \\ ||___, |/  \\ |  |  |  |   [_ |   |   |");
-			System.out.println("|  |   |     | |  | |  |  |       |     ||     |\\    |     \\    ||     |\\    |  |  |  |     ||   |   |");
-			System.out.println("|__|   |_____||____||__|__|       |_____| \\__,_| \\___|      \\___||____/  \\___|  |__|  |_____||___|___|");
+			System.out.println(
+					" _____  _      ____  __ __         ____   __ __  _____      _____ __ __  _____ ______    ___  ___ ___");
+			System.out.println(
+					"|     || |    |    ||  |  |       |    \\ |  |  |/ ___/     / ___/|  |  |/ ___/|      |  /  _]|   |   |");
+			System.out.println(
+					"|   __|| |     |  | |  |  | _____ |  o  )|  |  (   \\_     (   \\_ |  |  (   \\_ |      | /  [_ | _   _ |");
+			System.out.println(
+					"|  |_  | |___  |  | |_   _||     ||     ||  |  |\\__  |     \\__  ||  ~  |\\__  ||_|  |_||    _]|  \\_/  |");
+			System.out.println(
+					"|   _] |     | |  | |     ||_____||  O  ||  :  |/  \\ |     /  \\ ||___, |/  \\ |  |  |  |   [_ |   |   |");
+			System.out.println(
+					"|  |   |     | |  | |  |  |       |     ||     |\\    |     \\    ||     |\\    |  |  |  |     ||   |   |");
+			System.out.println(
+					"|__|   |_____||____||__|__|       |_____| \\__,_| \\___|      \\___||____/  \\___|  |__|  |_____||___|___|");
 			System.out.println("");
 			System.out.println("");
 			System.out.println("(1) Abfahrtszeiten der Busse per Plattform");
@@ -109,29 +117,29 @@ public class TUI implements output {
 			System.out.println("(x) Programm beenden");
 			eingabe = sc.nextLine();
 			switch (eingabe.toUpperCase()) {
-			case "1":
-				eingabe = "";
-				travelMenu();
-				break;
-			case "2":
-				printScheduleOfTravels();
-				break;
-			case "3":
-				createNewTravel();
-				break;
-			case "4":
-				BusArrives();
-				break;
-			case "5":
-				BusLeaves();
-				break;
-			case "6":
-				try {
-					isPlatformOccupied();
-				} catch (PlatformNotFoundException e) {
-					System.out.println("Plattform wurde nicht gefunden");
-				}
-				break;
+				case "1":
+					eingabe = "";
+					travelMenu();
+					break;
+				case "2":
+					printScheduleOfTravels();
+					break;
+				case "3":
+					createNewTravel();
+					break;
+				case "4":
+					BusArrives();
+					break;
+				case "5":
+					BusLeaves();
+					break;
+				case "6":
+					try {
+						isPlatformOccupied();
+					} catch (PlatformNotFoundException e) {
+						System.out.println("Plattform wurde nicht gefunden");
+					}
+					break;
 			}
 
 		} while (!eingabe.equalsIgnoreCase("x"));
@@ -139,6 +147,7 @@ public class TUI implements output {
 
 	/**
 	 * Checks if is platform occupied.
+	 * 
 	 * @throws PlatformNotFoundException
 	 */
 	public void isPlatformOccupied() throws PlatformNotFoundException {
@@ -304,8 +313,7 @@ public class TUI implements output {
 	 * Prints the schedule of travels.
 	 */
 	public void printScheduleOfTravels() {
-		System.out.println(
-				"Platform\tBus\t\tAbfahrt\t\tAnkunft\t\tZiel\t\tKlasse");
+		System.out.println("Platform\tBus\t\tAbfahrt\t\tAnkunft\t\tZiel\t\tKlasse");
 		String line = null;
 		for (Object platformItem : listOfPlatform) {
 			line = null;
@@ -313,12 +321,9 @@ public class TUI implements output {
 			ArrayList<Travel> travelList = tempPlatform.getTravelList();
 			Collections.sort(travelList, Travel.travelAbfahrtComparator);
 			for (Travel travelItem : travelList) {
-				line = "" + Integer.toString(travelItem.getBus().getBusNo())
-						+ "\t\t";
-				line = line + (getTimeByString(travelItem.getDepartureTime()))
-						+ "\t\t";
-				line = line + getTimeByString(travelItem.getArrivalTime())
-						+ "\t\t";
+				line = "" + Integer.toString(travelItem.getBus().getBusNo()) + "\t\t";
+				line = line + getTimeByString(travelItem.getArrivalTime()) + "\t\t";
+				line = line + (getTimeByString(travelItem.getDepartureTime())) + "\t\t";
 				line = line + travelItem.getDestination() + "";
 				if (travelItem.getBus().getComfort() == 0) {
 					line = line + "\t\t2.Klasse";
@@ -326,8 +331,7 @@ public class TUI implements output {
 					line = line + "\t\t1.Klasse";
 				}
 
-				System.out
-						.println(tempPlatform.getPlatformNo() + "\t\t" + line);
+				System.out.println(tempPlatform.getPlatformNo() + "\t\t" + line);
 
 			}
 		}
@@ -348,8 +352,7 @@ public class TUI implements output {
 		for (Travel travel : travelList) {
 			System.out.println(platfrom.getPlatformNo() + "\t"
 					+ getTimeByString(travel.getDepartureTime()) + "\t"
-					+ travel.getBus().getBusNo() + "\t"
-					+ travel.getDestination());
+					+ travel.getBus().getBusNo() + "\t" + travel.getDestination());
 		}
 		System.out.println();
 	}
@@ -477,14 +480,13 @@ public class TUI implements output {
 
 		System.out.println("Geben sie bitte ihr Reiseziel an: ");
 		destination = sc.nextLine();
-		System.out.println("Bitte geben sie die Ankunftszeit an (HH:MM): ");
-		arrivalTime = sc.nextLine();
 		System.out.println("Bitte geben sie die Abfahrtszeit an (HH:MM): ");
 		departureTime = sc.nextLine();
+		System.out.println("Bitte geben sie die Ankunftszeit an (HH:MM): ");
+		arrivalTime = sc.nextLine();
 
 		travel = new Travel(getNextTravelNo(), destination,
-				getTimeByString(arrivalTime), getTimeByString(departureTime),
-				bus);
+				getTimeByString(arrivalTime), getTimeByString(departureTime), bus);
 
 		return travel;
 	}
@@ -530,7 +532,8 @@ public class TUI implements output {
 		System.out.println(" \"__/\"---------------\"__/\"-+---+'");
 		type = Integer.parseInt(sc.nextLine());
 		System.out.println("");
-		System.out.println("Bitte geben sie die Bus Komfortabilität an ('0'-2.Klasse, '1'-1.Klasse) : ");
+		System.out.println(
+				"Bitte geben sie die Bus Komfortabilität an ('0'-2.Klasse, '1'-1.Klasse) : ");
 		comfort = Integer.parseInt(sc.nextLine());
 
 		if (type == 0) {
@@ -541,8 +544,7 @@ public class TUI implements output {
 			petrolTankCapacity = 300;
 		}
 
-		bus = new Bus(getNextBusNo(), type, comfort, capacity,
-				petrolTankCapacity);
+		bus = new Bus(getNextBusNo(), type, comfort, capacity, petrolTankCapacity);
 
 		return bus;
 	}

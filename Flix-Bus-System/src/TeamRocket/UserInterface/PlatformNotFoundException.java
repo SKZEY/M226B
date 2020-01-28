@@ -2,6 +2,7 @@ package TeamRocket.UserInterface;
 
 /**
  * The Class PlatformNotFoundException.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class PlatformNotFoundException extends Exception {
