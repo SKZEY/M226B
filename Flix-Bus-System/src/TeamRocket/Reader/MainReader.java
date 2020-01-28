@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 /**
  * The Class MainReader.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public abstract class MainReader {
@@ -69,14 +70,13 @@ public abstract class MainReader {
 	 *
 	 * @return the file lines
 	 */
-	public ArrayList getFileLines() {
-		ArrayList<String> csvList = new ArrayList();
+	public ArrayList<String> getFileLines() {
+		ArrayList<String> csvList = new ArrayList<>();
 		try {
 			File file = new File(filePath);
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);
 			String line = "";
-			String[] tempArr;
 			while ((line = br.readLine()) != null) {
 				csvList.add(line);
 			}

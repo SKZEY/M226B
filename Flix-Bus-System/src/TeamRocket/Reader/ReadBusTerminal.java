@@ -7,6 +7,7 @@ import TeamRocket.MainObjects.Platform;
 
 /**
  * The Class ReadBusTerminal.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class ReadBusTerminal extends MainReader {
@@ -49,13 +50,12 @@ public class ReadBusTerminal extends MainReader {
 	 */
 	public ArrayList<Object> getListOfObject() {
 		String[] tempArr;
-		ArrayList<Object> listOfBusTerminal = new ArrayList();
-		ArrayList<String> listofLines = new ArrayList();
+		ArrayList<Object> listOfBusTerminal = new ArrayList<>();
+		ArrayList<String> listofLines = new ArrayList<>();
 		listofLines = getFileLines();
 		for (int i = 1; i < listofLines.size(); i++) {
 			tempArr = listofLines.get(i).split(getdelimiter());
-			listOfBusTerminal
-					.add(new BusTerminal(tempArr[0], changeListType()));
+			listOfBusTerminal.add(new BusTerminal(tempArr[0], changeListType()));
 		}
 		return listOfBusTerminal;
 	}

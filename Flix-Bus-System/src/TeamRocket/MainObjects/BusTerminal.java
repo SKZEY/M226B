@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The Class BusTerminal.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class BusTerminal {
@@ -20,8 +21,7 @@ public class BusTerminal {
 	 * @param nameOfTerminal the name of terminal
 	 * @param platformList   the platform list
 	 */
-	public BusTerminal(String nameOfTerminal,
-			ArrayList<Platform> platformList) {
+	public BusTerminal(String nameOfTerminal, ArrayList<Platform> platformList) {
 		this.nameOfTerminal = nameOfTerminal;
 		this.platformList = platformList;
 	}

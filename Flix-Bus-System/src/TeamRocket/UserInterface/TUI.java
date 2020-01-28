@@ -17,15 +17,18 @@ import TeamRocket.MainObjects.Travel;
  */
 public class TUI implements output {
 
-	/** The list of platform. */
+	/** The list of platforms. */
 	ArrayList<Object> listOfPlatform;
 
-	/** The list of bus. */
+	/** The list of busses. */
 	ArrayList<Object> listOfBus;
 
-	/** The list of travel. */
+	/** The list of travels. */
 	ArrayList<Object> listOfTravel;
 
+	/** The list of bus terminals. */
+	ArrayList<Object> listOfBusTerminal;
+	
 	/** The platform. */
 	Platform platform;
 
@@ -43,10 +46,11 @@ public class TUI implements output {
 	 * @param listOfBus      the list of bus
 	 */
 	public TUI(ArrayList<Object> listOfPlatform, ArrayList<Object> listOfTravel,
-			ArrayList<Object> listOfBus) {
+			ArrayList<Object> listOfBus, ArrayList<Object> listOfBusTerminal) {
 		this.listOfPlatform = listOfPlatform;
 		this.listOfTravel = listOfTravel;
 		this.listOfBus = listOfBus;
+		this.listOfBusTerminal = listOfBusTerminal;
 
 	}
 

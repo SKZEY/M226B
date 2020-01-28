@@ -1,9 +1,6 @@
 package TeamRocket.MainObjects;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 import TeamRocket.Reader.ReadBus;
 import TeamRocket.Reader.ReadBusTerminal;
@@ -12,21 +9,21 @@ import TeamRocket.Reader.ReadTravel;
 import TeamRocket.UserInterface.TUI;
 
 /**
- * The Class Starter.
+ * Main class of the App.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class Starter {
 
 	/**
-	 * The main method.
+	 * starts the App
 	 *
-	 * @param args the arguments
+	 * @param args Arguments (default: none)
 	 */
 	public static void main(String[] args) {
 
 		// Data Path
-		String filePath = System.getProperty("user.dir") + pathBuilder()
-				+ "data";
+		String filePath = System.getProperty("user.dir") + pathBuilder() + "data";
 		// Bus
 		ArrayList<Object> listOfBus = new ArrayList<>();
 		ReadBus readBus = new ReadBus(null, ";");
@@ -48,56 +45,18 @@ public class Starter {
 		// BusTerminal
 		ArrayList<Object> listOfBusTerminal = new ArrayList<>();
 		ReadBusTerminal readBusTerminal = new ReadBusTerminal(
-				filePath + pathBuilder() + "busTerminal.csv", ";",
-				listOfPlatform);
+				filePath + pathBuilder() + "busTerminal.csv", ";", listOfPlatform);
 		listOfBusTerminal = readBusTerminal.getListOfObject();
 
-		TUI tui = new TUI(listOfPlatform, listOfTravel, listOfBus);
+		TUI tui = new TUI(listOfPlatform, listOfTravel, listOfBus, listOfBusTerminal);
 		tui.mainMenu();
 
 	}
 
 	/**
-	 * Name.
+	 * returns the system's delimiting character
 	 *
-	 * @param test the test
-	 */
-	public void name(int test) {
-
-	}
-
-	/**
-	 * Name.
-	 *
-	 * @param test the test
-	 */
-	public void name(String test) {
-
-	}
-
-	/**
-	 * Test.
-	 */
-	public static void test() {
-
-		String myTime = "10:30:54";
-		SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss");
-		Date date = null;
-		try {
-			date = sdf.parse(myTime);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		String formattedTime = sdf.format(date);
-
-		System.out.println(formattedTime);
-
-	}
-
-	/**
-	 * Path builder.
-	 *
-	 * @return the string
+	 * @return String (either "/" or "\")
 	 */
 	static String pathBuilder() {
 		String os = System.getProperty("os.name"); // check os type

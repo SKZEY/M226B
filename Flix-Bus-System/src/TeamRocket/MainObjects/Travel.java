@@ -5,6 +5,7 @@ import java.util.Date;
 
 /**
  * The Class Travel.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class Travel {

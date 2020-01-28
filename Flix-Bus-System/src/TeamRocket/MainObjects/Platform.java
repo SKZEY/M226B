@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 /**
  * The Class Platform.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class Platform {

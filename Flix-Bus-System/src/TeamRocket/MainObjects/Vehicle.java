@@ -2,6 +2,7 @@ package TeamRocket.MainObjects;
 
 /**
  * The Class Vehicle.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class Vehicle {

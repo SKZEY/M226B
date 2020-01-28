@@ -7,6 +7,7 @@ import TeamRocket.MainObjects.Travel;
 
 /**
  * The Class ReadPlatform.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class ReadPlatform extends MainReader {
@@ -58,11 +59,9 @@ public class ReadPlatform extends MainReader {
 			tempArr = listofLines.get(i).split(getdelimiter());
 			if (!idAllreadyExist(Integer.parseInt(tempArr[0]),
 					listOfUniquePlatform)) {
-				ArrayList<Travel> travelList = getListofTravel(tempArr[0],
-						listofLines);
-				listOfUniquePlatform
-						.add(new Platform(Integer.parseInt(tempArr[0]),
-								Integer.parseInt(tempArr[1]), travelList));
+				ArrayList<Travel> travelList = getListofTravel(tempArr[0], listofLines);
+				listOfUniquePlatform.add(new Platform(Integer.parseInt(tempArr[0]),
+						Integer.parseInt(tempArr[1]), travelList));
 			}
 		}
 		return listOfUniquePlatform;

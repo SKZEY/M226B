@@ -2,6 +2,7 @@ package TeamRocket.MainObjects;
 
 /**
  * The Class Bus.
+ * 
  * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class Bus extends Vehicle {
@@ -15,13 +16,13 @@ public class Bus extends Vehicle {
 	/**
 	 * Instantiates a new bus.
 	 *
-	 * @param busNo              the bus no
+	 * @param busNo              the bus number
 	 * @param type               the type
-	 * @param comfort            the comfort
+	 * @param comfort            the comfort type
 	 * @param capacity           the capacity
 	 * @param petrolTankCapacity the petrol tank capacity
 	 *
-	 *                           Konstruktor für die Klasse Bus
+	 * 
 	 */
 	public Bus(int busNo, int type, int comfort, int capacity,
 			int petrolTankCapacity) {
@@ -31,9 +32,9 @@ public class Bus extends Vehicle {
 	}
 
 	/**
-	 * Gets the bus no.
+	 * Gets the bus number.
 	 *
-	 * @return the bus no
+	 * @return the bus number
 	 */
 	public int getBusNo() {
 		return busNo;
