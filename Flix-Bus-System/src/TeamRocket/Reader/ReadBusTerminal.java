@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import TeamRocket.MainObjects.BusTerminal;
 import TeamRocket.MainObjects.Platform;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Class ReadBusTerminal.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class ReadBusTerminal extends MainReader {
 
@@ -46,7 +44,7 @@ public class ReadBusTerminal extends MainReader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see Reader.MainReader#getListOfObject()
 	 */
 	public ArrayList<Object> getListOfObject() {

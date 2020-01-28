@@ -11,11 +11,9 @@ import TeamRocket.MainObjects.Bus;
 import TeamRocket.MainObjects.Platform;
 import TeamRocket.MainObjects.Travel;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Class TUI.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class TUI implements output {
 
@@ -54,7 +52,7 @@ public class TUI implements output {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see UserInterface.output#printListOfTravel()
 	 */
 	public void printListOfTravel() {
@@ -63,7 +61,7 @@ public class TUI implements output {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see UserInterface.output#printListOfPlatforms()
 	 */
 	public void printListOfPlatforms() {
@@ -73,7 +71,7 @@ public class TUI implements output {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see UserInterface.output#PrintTravelByDestionation()
 	 */
 	public void PrintTravelByDestionation() {
@@ -83,7 +81,7 @@ public class TUI implements output {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see UserInterface.output#mainMenu()
 	 */
 	public void mainMenu() {
@@ -91,12 +89,12 @@ public class TUI implements output {
 			System.out.println("---Flix-Bus-System---");
 			System.out.println("");
 			System.out.println("");
-			System.out.println("Abfahrtszeiten der Busse per <P>latform");
+			System.out.println("Abfahrtszeiten der Busse per <P>lattform");
 			System.out.println("<R>eiseplan");
 			System.out.println("Anlegen einer <n>euen Reise");
 			System.out.println("Bus fährt <e>in");
 			System.out.println("Bus fährt <l>os");
-			System.out.println("Ist Platform <v>erfügbar");
+			System.out.println("Ist Plattform <v>erfügbar");
 			System.out.println("Programm <b>eenden");
 			eingabe = sc.nextLine();
 			switch (eingabe.toUpperCase()) {
@@ -120,7 +118,7 @@ public class TUI implements output {
 				try {
 					isPlatformOccupied();
 				} catch (PlatformNotFoundException e) {
-					System.out.println("Platform wurde nicht gefunden");
+					System.out.println("Plattform wurde nicht gefunden");
 				}
 				break;
 			}
@@ -130,12 +128,12 @@ public class TUI implements output {
 
 	/**
 	 * Checks if is platform occupied.
-	 * @throws PlatformNotFoundException 
+	 * @throws PlatformNotFoundException
 	 */
 	public void isPlatformOccupied() throws PlatformNotFoundException {
 		String platformNo;
 		boolean find = false;
-		System.out.println("Bitte geben sie die Platformnummer ein: ");
+		System.out.println("Bitte geben sie die Plattformnummer ein: ");
 		platformNo = sc.nextLine();
 		Platform platformTemp = null;
 
@@ -149,9 +147,9 @@ public class TUI implements output {
 		}
 		if (find == true) {
 			if (platformTemp.isPlatformOccupied() == 0) {
-				System.out.println("Platform ist verfügbar");
+				System.out.println("Plattform ist verfügbar");
 			} else {
-				System.out.println("Platform ist besetzt");
+				System.out.println("Plattform ist besetzt");
 			}
 		} else {
 			throw new PlatformNotFoundException("Plattform wurde nicht gefunden.");
@@ -181,7 +179,7 @@ public class TUI implements output {
 			}
 		}
 		if (find == true) {
-			System.out.println("Bus Nummer " + busNo + " hat die Platform"
+			System.out.println("Bus Nummer " + busNo + " hat die Plattform"
 					+ platformTemp.getPlatformNo() + " verlassen.");
 			for (Object object : listOfPlatform) {
 				Platform platform = (Platform) object;
@@ -216,7 +214,7 @@ public class TUI implements output {
 			}
 		}
 		if (find == true) {
-			System.out.println("Bus Nummer " + busNo + " ist auf der PLatform "
+			System.out.println("Bus Nummer " + busNo + " ist auf der Plattform "
 					+ platformTemp.getPlatformNo() + " angekommen.");
 			for (Object object : listOfPlatform) {
 				Platform platform = (Platform) object;
@@ -236,7 +234,7 @@ public class TUI implements output {
 		do {
 			System.out.println("--- Abfahrtszeiten --- ");
 			System.out.println("");
-			System.out.println("Bitte geben Sie die Plattform Nummer ein:");
+			System.out.println("Bitte geben Sie die Plattformnummer ein:");
 			System.out.println("");
 			System.out.println("Mit <Z> gelangen Sie zurück ins Hauptmenu");
 			eingabe = sc.nextLine();
@@ -244,7 +242,7 @@ public class TUI implements output {
 			if (isStringInteger(eingabe)) {
 				platform = getPlatformByNumber(Integer.parseInt(eingabe));
 				if (platform == null) {
-					System.out.println("Es wurde keine Platform mit der Nummer "
+					System.out.println("Es wurde keine Plattform mit der Nummer "
 							+ eingabe + " gefunden.");
 				} else {
 					printListOfTravelbyPlatform(platform);
@@ -394,7 +392,7 @@ public class TUI implements output {
 				platform.getTravelList().add(travel);
 				listOfBus.add(bus);
 				listOfTravel.add(travel);
-				System.err.println("Die neue Reise wurde an der Platform "
+				System.err.println("Die neue Reise wurde an der Plattform "
 						+ platform.getPlatformNo() + " angelegt.");
 				travelCreated = true;
 				break;
@@ -402,7 +400,7 @@ public class TUI implements output {
 		}
 		if (travelCreated == false) {
 			System.out.println(
-					"Leider konnte die Reise nicht angelegt werden, da keine Platform zu den angegebenen Zeiten zur Verfügung steht.");
+					"Leider konnte die Reise nicht angelegt werden, da keine Plattform zu den angegebenen Zeiten zur Verfügung steht.");
 		}
 
 	}

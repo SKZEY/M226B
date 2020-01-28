@@ -11,9 +11,9 @@ import TeamRocket.Reader.ReadPlatform;
 import TeamRocket.Reader.ReadTravel;
 import TeamRocket.UserInterface.TUI;
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class Starter.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class Starter {
 

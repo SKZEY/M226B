@@ -1,10 +1,8 @@
 package TeamRocket.UserInterface;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Interface output.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public interface output {
 

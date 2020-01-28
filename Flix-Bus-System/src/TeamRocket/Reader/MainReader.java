@@ -6,11 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Class MainReader.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public abstract class MainReader {
 

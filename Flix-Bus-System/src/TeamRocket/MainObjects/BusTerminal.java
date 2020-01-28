@@ -2,11 +2,9 @@ package TeamRocket.MainObjects;
 
 import java.util.ArrayList;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Class BusTerminal.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class BusTerminal {
 

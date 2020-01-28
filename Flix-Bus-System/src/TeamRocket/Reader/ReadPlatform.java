@@ -5,11 +5,9 @@ import java.util.ArrayList;
 import TeamRocket.MainObjects.Platform;
 import TeamRocket.MainObjects.Travel;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Class ReadPlatform.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class ReadPlatform extends MainReader {
 
@@ -48,7 +46,7 @@ public class ReadPlatform extends MainReader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see Reader.MainReader#getListOfObject()
 	 */
 	public ArrayList<Object> getListOfObject() {

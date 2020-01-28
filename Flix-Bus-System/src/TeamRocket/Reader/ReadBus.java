@@ -4,11 +4,9 @@ import java.util.ArrayList;
 
 import TeamRocket.MainObjects.Bus;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Class ReadBus.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class ReadBus extends MainReader {
 
@@ -24,7 +22,7 @@ public class ReadBus extends MainReader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see Reader.MainReader#setFilePath(java.lang.String, java.lang.String)
 	 */
 	@Override
@@ -35,7 +33,7 @@ public class ReadBus extends MainReader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see Reader.MainReader#getListOfObject()
 	 */
 	public ArrayList<Object> getListOfObject() {

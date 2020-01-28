@@ -3,11 +3,9 @@ package TeamRocket.MainObjects;
 import java.util.Comparator;
 import java.util.Date;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Class Travel.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class Travel {
 

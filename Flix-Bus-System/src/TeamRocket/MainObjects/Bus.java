@@ -1,10 +1,8 @@
 package TeamRocket.MainObjects;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Class Bus.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class Bus extends Vehicle {
 
@@ -22,7 +20,7 @@ public class Bus extends Vehicle {
 	 * @param comfort            the comfort
 	 * @param capacity           the capacity
 	 * @param petrolTankCapacity the petrol tank capacity
-	 * 
+	 *
 	 *                           Konstruktor für die Klasse Bus
 	 */
 	public Bus(int busNo, int type, int comfort, int capacity,

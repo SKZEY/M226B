@@ -8,11 +8,9 @@ import java.util.Date;
 import TeamRocket.MainObjects.Bus;
 import TeamRocket.MainObjects.Travel;
 
-/*
- *  @author melvin 
- * */
 /**
  * The Class ReadTravel.
+ * @author Severin Hasler, Melvin Tas, Jonas Tochtermann
  */
 public class ReadTravel extends MainReader {
 
@@ -53,7 +51,7 @@ public class ReadTravel extends MainReader {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see Reader.MainReader#getListOfObject()
 	 */
 	public ArrayList<Object> getListOfObject() {
