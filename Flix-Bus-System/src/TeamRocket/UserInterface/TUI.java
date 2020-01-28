@@ -90,35 +90,42 @@ public class TUI implements output {
 	 */
 	public void mainMenu() {
 		do {
-			System.out.println("---Flix-Bus-System---");
+			System.out.println("");
+			System.out.println(" _____  _      ____  __ __         ____   __ __  _____      _____ __ __  _____ ______    ___  ___ ___");
+			System.out.println("|     || |    |    ||  |  |       |    \\ |  |  |/ ___/     / ___/|  |  |/ ___/|      |  /  _]|   |   |");
+			System.out.println("|   __|| |     |  | |  |  | _____ |  o  )|  |  (   \\_     (   \\_ |  |  (   \\_ |      | /  [_ | _   _ |");
+			System.out.println("|  |_  | |___  |  | |_   _||     ||     ||  |  |\\__  |     \\__  ||  ~  |\\__  ||_|  |_||    _]|  \\_/  |");
+			System.out.println("|   _] |     | |  | |     ||_____||  O  ||  :  |/  \\ |     /  \\ ||___, |/  \\ |  |  |  |   [_ |   |   |");
+			System.out.println("|  |   |     | |  | |  |  |       |     ||     |\\    |     \\    ||     |\\    |  |  |  |     ||   |   |");
+			System.out.println("|__|   |_____||____||__|__|       |_____| \\__,_| \\___|      \\___||____/  \\___|  |__|  |_____||___|___|");
 			System.out.println("");
 			System.out.println("");
-			System.out.println("Abfahrtszeiten der Busse per <P>lattform");
-			System.out.println("<R>eiseplan");
-			System.out.println("Anlegen einer <n>euen Reise");
-			System.out.println("Bus fährt <e>in");
-			System.out.println("Bus fährt <l>os");
-			System.out.println("Ist Plattform <v>erfügbar");
-			System.out.println("Programm <b>eenden");
+			System.out.println("(1) Abfahrtszeiten der Busse per Plattform");
+			System.out.println("(2) Reiseplan");
+			System.out.println("(3) Anlegen einer neuen Reise");
+			System.out.println("(4) Bus fährt ein");
+			System.out.println("(5) Bus fährt los");
+			System.out.println("(6) Ist Plattform verfügbar");
+			System.out.println("(x) Programm beenden");
 			eingabe = sc.nextLine();
 			switch (eingabe.toUpperCase()) {
-			case "P":
+			case "1":
 				eingabe = "";
 				travelMenu();
 				break;
-			case "R":
+			case "2":
 				printScheduleOfTravels();
 				break;
-			case "N":
+			case "3":
 				createNewTravel();
 				break;
-			case "E":
+			case "4":
 				BusArrives();
 				break;
-			case "L":
+			case "5":
 				BusLeaves();
 				break;
-			case "V":
+			case "6":
 				try {
 					isPlatformOccupied();
 				} catch (PlatformNotFoundException e) {
@@ -127,7 +134,7 @@ public class TUI implements output {
 				break;
 			}
 
-		} while (!eingabe.equalsIgnoreCase("b"));
+		} while (!eingabe.equalsIgnoreCase("x"));
 	}
 
 	/**
@@ -495,11 +502,35 @@ public class TUI implements output {
 		int capacity;
 		int petrolTankCapacity;
 		Bus bus;
-		System.out.println(
-				"Geben sie bitte den Bus-Typen an ('0'-Singledecker,'1'-Doubledecker) : ");
+		System.out.println("Geben sie bitte den Bus-Typen an");
+		System.out.println("");
+		System.out.println("'0'-Singledecker:");
+		System.out.println("");
+		System.out.println("___________________");
+		System.out.println("|,-----.,-----.,---.\\");
+		System.out.println("||     ||     ||    \\\\");
+		System.out.println("|`-----'|-----||-----\\`----.");
+		System.out.println("[       |    -||-   _|    (|");
+		System.out.println("[  ,--. |_____||___/.--.   |");
+		System.out.println("=-(( `))-----------(( `))-==");
+		System.out.println("   `--'             `--'");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("'1'-Doubledecker:");
+		System.out.println("");
+		System.out.println("    .---------------------------.");
+		System.out.println("   /,--..---..---..---..---..--. `.");
+		System.out.println("  //___||___||___||___||___||___\\_|");
+		System.out.println("  [j__ ######################## [_|");
+		System.out.println("     \\============================|");
+		System.out.println("  .==|  |\"\"\"||\"\"\"||\"\"\"||\"\"\"| |\"\"\"||");
+		System.out.println(" /======\"---\"\"---\"\"---\"\"---\"=|  =||");
+		System.out.println(" |____    []*          ____  | ==||");
+		System.out.println(" //  \\               //  \\ |===||");
+		System.out.println(" \"__/\"---------------\"__/\"-+---+'");
 		type = Integer.parseInt(sc.nextLine());
-		System.out.println(
-				"Bitte geben sie die Bus Komfortabilität an ('0'-2.Klasse, '1'-1.Klasse) : ");
+		System.out.println("");
+		System.out.println("Bitte geben sie die Bus Komfortabilität an ('0'-2.Klasse, '1'-1.Klasse) : ");
 		comfort = Integer.parseInt(sc.nextLine());
 
 		if (type == 0) {
